@@ -4,6 +4,8 @@ on:
   schedule:
     - cron: '/30 * * * *'
   
+  release:
+  
   
 jobs:
   job_1:
@@ -48,4 +50,4 @@ jobs:
       with:
         args: file://test.html
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.token }}
