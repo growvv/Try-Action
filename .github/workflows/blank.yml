@@ -4,6 +4,7 @@ on:
   schedule:
     - cron: '*/30 * * * *'
   
+  push:
   release:
   
   
@@ -21,33 +22,10 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
     
-    - name: Send email
-      uses: dawidd6/action-send-mail@v1.3.0
-      with:
-        # SMTP server address
-        server_address: smtp.qq.com
-        # SMTP server port
-        server_port: 465
-        # Authenticate as this user to SMTP server
-        username: ${{secrets.MAIL_USERNAME}}
-        # Authenticate with this password to SMTP server
-        password: ${{secrets.MAIL_PASSWORD}}
-        # Subject of mail message
-        subject: Github Actions job result
-        # Body of mail message (might be a filename to read from)
-        # body: Build job of ${{github.repository}} completed successfully!
-        # Read file contents as body:
-        body: file://test.html
-        # Recipients mail addresses (separated with comma)
-        to: 2092876368@qq.com, 3214739256@qq.com
-        # Full name of mail sender
-        from: 刘大小的Github Actions
-        # Content-Type HTTP header (MIME type)
-        content_type: text/html
 
     - name: Upload to release
       uses: JasonEtco/upload-to-release@master
       with:
-        args: file://test.html
+        args: test.html
       env:
         GITHUB_TOKEN: ${{ secrets.token }}
