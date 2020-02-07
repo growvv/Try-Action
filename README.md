@@ -32,7 +32,6 @@ github actions的一些简单尝试。
     # Content-Type HTTP header (MIME type)
     content_type: # optional, default is text/plain
 ```
-## 
 
 ## 二、使用构件持久化工作流程数据
 **构件是指在工作流程运行过程中产生的文件或文件集**，构件用于在作业完成后保存数据。
