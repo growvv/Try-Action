@@ -42,3 +42,10 @@ jobs:
         from: 刘大小的Github Actions
         # Content-Type HTTP header (MIME type)
         content_type: text/html
+
+    - name: Upload to release
+      uses: JasonEtco/upload-to-release@master
+      with:
+        args: file://test.html
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
