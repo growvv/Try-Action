@@ -30,9 +30,9 @@ jobs:
         # Subject of mail message
         subject: Github Actions job result
         # Body of mail message (might be a filename to read from)
-        body: Build job of ${{github.repository}} completed successfully!
+        # body: Build job of ${{github.repository}} completed successfully!
         # Read file contents as body:
-        # body: file://README.md
+        body: file://README.md
         # Recipients mail addresses (separated with comma)
         to: 2092876368@qq.com, 3214739256@qq.com
         # Full name of mail sender
