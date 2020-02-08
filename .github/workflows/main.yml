@@ -1,0 +1,28 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run a one-line script
+      run: echo Hello, world!
+    - name: Run a multi-line script
+      run: |
+        echo Add other actions to build,
+        echo test, and deploy your project.
+  
+    - name: Download qrsctl
+      run: 
+        wget http://devtools.qiniu.com/linux/amd64/qrsctl
+        chmod +x qrsctl
+        cp qrsctl /usr/local/bin/  
+        
+    - name: Upload to Qiniu
+      run: 
+        qrsctl login 2092876368@qq.com lfr139931
+        qrsctl info
