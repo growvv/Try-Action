@@ -21,10 +21,13 @@ jobs:
         wget http://devtools.qiniu.com/linux/amd64/qrsctl
         chmod +x qrsctl
     
-        cp qrsctl /usr/local/bin/  
+         
         
     - name: Upload to Qiniu
       run: | 
-        qrsctl login 2092876368@qq.com lfr139931
+        ./qrsctl login 2092876368@qq.com lfr139931
+        ./qrsctl info
         
-        qrsctl info
+    - name: Upload to Qiniu
+      run:          
+        sudo cp qrsctl /usr/local/bin/ && echo ok
