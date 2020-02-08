@@ -17,12 +17,14 @@ jobs:
         echo test, and deploy your project.
   
     - name: Download qrsctl
-      run: 
+      run: |
         wget http://devtools.qiniu.com/linux/amd64/qrsctl
         chmod +x qrsctl
+    
         cp qrsctl /usr/local/bin/  
         
     - name: Upload to Qiniu
-      run: 
+      run: | 
         qrsctl login 2092876368@qq.com lfr139931
+        
         qrsctl info
