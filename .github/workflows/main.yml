@@ -31,7 +31,7 @@ jobs:
         ./qrsctl login 2092876368@qq.com lfr139931
         qrsctl info
         wget https://pan.rogn.top/Image/1.png
-        qrsctl put 111imgbed 1.png one.png
+        qrsctl put 111imgbed one.png 1.png
         
     - name: list again
       run: | 
