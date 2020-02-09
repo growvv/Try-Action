@@ -129,4 +129,30 @@ jobs:
 ### 5. 参考链接
 1. [GitHub帮助-使用构件持久化工作流程数据](https://help.github.com/cn/actions/automating-your-workflow-with-github-actions/persisting-workflow-data-using-artifacts)
 
+## 三、下载与上传到云端
+### 1. 下载
+使用wget直接下载
+### 2. 上传到对象存储
+将一些结果（如爬虫结果）保存到云端。
+```yml
+    - name: Download qrsctl
+      run: |
+        wget http://devtools.qiniu.com/linux/amd64/qrsctl
+        chmod +x qrsctl
+        sudo cp qrsctl /usr/local/bin/ && echo ok 
+        
+    - name: Upload to Qiniu
+      run: | 
+        ./qrsctl login xxx@qq.com xxx
+        qrsctl info
+        wget https://pan.rogn.top/Image/1.png
+        qrsctl put 111imgbed one.png 1.png
+```
+
+## 四、系统命令
+1. <code>ls</code>: 列出文件
+2. <code>pwd</code>: 显示当前路径
+3. <code>sudo</code>: 发现Actions竟然开放sudo权限
+4. <code>echo</code>: 打印函数，可作辅助功能，例如 <code>&&echo ok</code>判断前面的命令是否运行成功
+
 ## 
